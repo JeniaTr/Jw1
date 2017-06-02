@@ -30,6 +30,7 @@ public class Main {
         System.out.println("5 Metod");
         System.out.println("6 set get to class");
         System.out.println("7 Nasledovanie & overaid  ");
+        System.out.println("8 Try catch  ");
 
         System.out.println("Chose your number:");
 
@@ -42,7 +43,7 @@ public class Main {
                 System.out.println("Enter number of array:");
                 n = in.nextInt();
                 a = new int[n];
-                for (int i = 0; i < n; i++) {
+                for (int i = 0; i < a.length; i++) {
                     if (i % 7 == 0)
                         System.out.print("\n");
                     Random random = new Random();
@@ -154,7 +155,29 @@ public class Main {
                 StudentZao b5 = new StudentZao();
                 System.out.println(b5.getName());
                 break;
+            case 8:
+                int e = 5;
+                try {
+                    System.out.println(e / 0);
+                } catch (Exception e1) {
+                    System.out.println("Деление на ноль");
+                } finally {
+//                    break;
+                }
+                int[] m = {-1, 0, 1};
+                Scanner sc = new Scanner(System.in);
 
+                try {
+                    int aa = sc.nextInt();
+                    m[aa] = 4 / aa;
+                    System.out.println(m[aa]);
+
+                } catch (ArithmeticException e1) {
+                    System.out.println("Не допуст. Арефм. Операция");
+                } catch (ArrayIndexOutOfBoundsException e2) {
+                    System.out.println("Index not found");
+                }
+                break;
         }
     }
 }
