@@ -1,6 +1,9 @@
 package com.company;
 
+import java.lang.reflect.Array;
 import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Random;
 
 public class Main {
 
@@ -40,10 +43,14 @@ public class Main {
                 n = in.nextInt();
                 a = new int[n];
                 for (int i = 0; i < n; i++) {
-                    System.out.print(" " + i + " ");
-                    if (i % 10 == 0)
+                    if (i % 7 == 0)
                         System.out.print("\n");
+                    Random random = new Random();
+                    a[i] = random.nextInt(123);
+                    System.out.print(" " + a[i] + " ");
                 }
+                System.out.println();
+                System.out.println(Arrays.toString(a));
                 break;
 
             case 2:
